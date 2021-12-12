@@ -1,12 +1,11 @@
 #include <iostream>
-#include <vector>
 #include <chrono>
 #include <ctime>
+#include <vector>
 
 /* Sorting Algorithms */
 
-#include "SelectionSort.cpp"
-
+#include "Sorting.cpp"
 
 using namespace std;
 
@@ -23,6 +22,7 @@ public:
     
     vector<int> sortArray(vector<int>& nums) {
         int algo = 0;
+        Sorting s;
         
         std::chrono::time_point<std::chrono::system_clock> start, end;
         start = std::chrono::system_clock::now();
@@ -36,12 +36,20 @@ public:
         switch (algo) {
             case 0:
             default:
-                /* Worst Case - O(N^2) */
-                selectionSort(nums);
+                /* Worst Case - O(N^2); Best Case - O(N^2) */
+                s.selectionSort(nums);
                 
                 printArray(nums);
                 cout << "Selection Sort : " ;
                 break;   
+            
+            case 1:
+                /* Worst Case - ; Best Case -  */
+              //  bubbleSort(nums);
+                
+                printArray(nums);
+                cout << "Bubble Sort : ";
+                break;
         }
         
         end = std::chrono::system_clock::now();
@@ -52,3 +60,4 @@ public:
         return nums;
     }
 };
+
