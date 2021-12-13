@@ -30,6 +30,7 @@ public:
         cout << "Select an algorithm to execute : " << endl;
         cout << "0. Selection Sort" << endl;
         cout << "1. Bubble Sort" << endl;
+        cout << "2. Merge Sort" << endl;
         
         cin >> algo;
     
@@ -38,26 +39,29 @@ public:
             default:
                 /* Worst Case - O(N^2); Best Case - O(N^2) */
                 s.selectionSort(nums);
-                
-                printArray(nums);
                 cout << "Selection Sort : " ;
                 break;   
             
             case 1:
-                /* Worst Case - ; Best Case -  */
-              //  bubbleSort(nums);
-                
-                printArray(nums);
+                /* Worst Case - O(N^2) ; Best Case -  O(N) due to the flag*/
+                s.bubbleSort(nums);
                 cout << "Bubble Sort : ";
+                break;
+                
+            case 2:
+                /* */
+                s.mergeSort(nums);
+                cout << "Merge Sort : ";
                 break;
         }
         
         end = std::chrono::system_clock::now();
         std::chrono::duration<double> elapsed_seconds = end - start;
         
+        printArray(nums);
+        
         cout << "Elapsed time: " << elapsed_seconds.count() << endl;
         
         return nums;
     }
 };
-
