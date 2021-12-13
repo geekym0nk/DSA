@@ -31,6 +31,7 @@ public:
         cout << "0. Selection Sort" << endl;
         cout << "1. Bubble Sort" << endl;
         cout << "2. Merge Sort" << endl;
+        cout << "3. Insertion Sort" << endl;
         
         cin >> algo;
     
@@ -49,9 +50,15 @@ public:
                 break;
                 
             case 2:
-                /* */
+                /* Best & Worst Case - O(log(n)) */
                 s.mergeSort(nums);
                 cout << "Merge Sort : ";
+                break;
+            
+            case 3: 
+                /* Best Case - */
+                s.insertionSort(nums);
+                cout << "Insertion Sort : ";
                 break;
         }
         
