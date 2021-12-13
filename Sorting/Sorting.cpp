@@ -10,6 +10,7 @@ using namespace std;
 
 class Sorting {
     public :
+        /* Selection Sort */
         void selectionSort(vector<int>& nums)
         {  
             for (int i = 0; i < nums.size()-1; i++)
@@ -28,6 +29,7 @@ class Sorting {
             return;
         }
         
+        /* Bubble Sort */
         void bubbleSort (vector<int> & nums)
         {
             bool isSorted = true;
@@ -55,6 +57,7 @@ class Sorting {
             return;
         }
         
+        /* Merge Sort */
         void merge (vector<int> & nums, int &lo, int &mid, int &hi)
         {
             int itr1 = 0;
@@ -130,4 +133,33 @@ class Sorting {
 
             return;
         }
+        
+        /* Insertion Sort */
+        void insertionSort (vector<int> & nums)
+        {
+            if (nums.size() > 1)
+            {
+                for (int i = 1; i < nums.size(); i++)
+                {
+                    if (nums[i] < nums[i-1])
+                    {
+                        int t = nums[i];
+                        nums[i] = nums[i-1];
+                        nums[i-1] = t;
+                            
+                        int j = i-1;
+                        
+                        while ((j > 0) &&
+                               (nums[j] < nums[j-1]))
+                        {
+                            t = nums[j];
+                            nums[j] = nums[j-1];
+                            nums[j-1] = t;
+                            j--;
+                        }
+                    }
+                }
+            }
+            return;
+        }      
 };
